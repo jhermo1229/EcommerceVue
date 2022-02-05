@@ -102,8 +102,6 @@
 import Header from "@/components/Header.vue";
 import Footer from "@/components/Footer.vue";
 import EmptyCart from "@/components/EmptyCart.vue";
-// import Summary from "@/components/Summary.vue";
-// import swal from "sweetalert";
 export default {
   components: { Header, Footer, EmptyCart },
   name: "Cart",
@@ -118,11 +116,6 @@ export default {
     removeItem(items) {
       this.$store.dispatch("removeToCart", items);
     },
-    // checkout() {
-    //   swal("Good", "Success!", "success").then((value) => {
-    //     window.location.href = "/Cart";
-    //   });
-    // },
   },
   computed: {
     cartItems() {
