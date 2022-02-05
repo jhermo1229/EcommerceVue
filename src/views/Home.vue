@@ -2,20 +2,19 @@
   <div class="wrapper">
     <Header />
     <div class="content">
-      <div class="wheelscontainer"></div>
       <h4 class="products">Products</h4>
       <div class="row">
         <div
           v-on:click="wheelsDetails(items)"
           v-for="items in wheels"
           :key="items.id"
-          class="col-md-4 pointer"
+          class="col-md-4 pointer p-2"
         >
           <img
             :src="items.url"
             width="300px"
             height="300px"
-            style="border-radius: 15px"
+            style="border-radius: 30px"
           />
           <h5 class="black">{{ items.name }}</h5>
         </div>
@@ -49,14 +48,17 @@ export default {
   display: flex;
   flex-direction: column;
   height: 100vh;
-  background-color: blue;
 }
 .content {
   background: white;
   flex: 1;
+  text-align: center;
   overflow-y: auto;
 }
 .pointer {
   cursor: pointer;
+}
+.products {
+  text-align: center;
 }
 </style>

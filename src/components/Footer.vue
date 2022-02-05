@@ -1,9 +1,25 @@
 {
 <template>
   <footer>
-    <div class="footer">
-      <div style="margin-left: 20px">
-        <h4 class="rota">ROTA WHEELS</h4>
+    <div class="footer d-flex justify-content-around">
+      <div class="align-self-center">
+        <h4 class="color">ROTA WHEELS</h4>
+      </div>
+      <div class="color">
+        <h4>Address:</h4>
+        <h5>
+          Philippine Aluminum Wheels Incorporated Severina Diamond Industrial
+        </h5>
+        <h5>
+          Complex Km. 16 South Superhighway, Paranaque, Metro Manila,
+          Philippines
+        </h5>
+      </div>
+      <div class="align-self-end color">
+        <h5>
+          PHILIPPINE ALUMINUM WHEELS INCORPORATED. COPYRIGHT 2022. ALL RIGHTS
+          RESERVED
+        </h5>
       </div>
     </div>
   </footer>
@@ -17,11 +33,12 @@ export default {
 
 <style scoped>
 .footer {
-  min-height: 60px;
-  background: lightblue;
-  display: flex;
-  justify-content: space-between;
+  background: black;
   padding-top: 17px;
+}
+
+.color {
+  color: lightslategray;
 }
 </style>
 }

@@ -3,13 +3,13 @@
   <header>
     <div class="header">
       <div class="logo">
-        <h4 v-on:click="home()" class="wheels">ROTA WHEELS</h4>
         <img
-          src="../assets/gforce.jpg"
+          src="../assets/kensei.jpg"
           width="45px"
           height="45 px"
           style="margin-left: 10px"
         />
+        <h4 v-on:click="home()" class="wheels">ROTA WHEELS</h4>
       </div>
       <div class="d-flex cart">
         <i v-on:click="cart()" class="fa fa-shopping-cart cart-icon"></i>
@@ -41,7 +41,7 @@ export default {
 <style scoped>
 .header {
   height: 60px;
-  background: lightblue;
+  background: black;
   display: flex;
   justify-content: space-between;
 }
@@ -54,20 +54,20 @@ export default {
 }
 
 .wheels {
-  color: black;
+  color: lightgreen;
   font-weight: 600;
   margin-top: 7px;
 }
 
 .cart-count {
   font-size: 15px;
-  color: red;
-  padding: 0 5px;
+  color: black;
+  padding: 0 9px;
   margin-left: -35px;
-  background: black;
-  height: 20px;
-  border-radius: 50%;
-  width: 20px;
+  background: white;
+  height: 25px;
+  border-radius: 70%;
+  width: 25px;
 }
 .cart {
   width: 120px;
@@ -76,9 +76,8 @@ export default {
 }
 
 .cart-icon {
-  line-height: 45px;
-  font-size: 24 px;
-  color: white;
+  line-height: 50px;
+  color: lightgreen;
   cursor: pointer;
 }
 </style>
