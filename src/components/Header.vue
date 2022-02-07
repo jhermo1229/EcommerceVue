@@ -1,4 +1,3 @@
-{
 <template>
   <header>
     <div class="header">
@@ -11,11 +10,22 @@
         />
         <h4 v-on:click="home()" class="wheels">ROTA WHEELS</h4>
       </div>
-      <div class="wheels" v-on:click="account()">ACCOUNT</div>
-      <div class="wheels" v-on:click="accountExisting()">ACCOUNT EXISTING</div>
-      <div class="d-flex cart">
-        <i v-on:click="cart()" class="fa fa-shopping-cart cart-icon"></i>
-        <span class="cart-count">{{ count }}</span>
+      <div class="d-flex cart flex-row">
+        <div class="d-flex">
+          <i v-on:click="cart()" class="fa fa-shopping-cart cart-icon"></i>
+          <span class="cart-count">{{ count }}</span>
+        </div>
+        <div class="cart" v-if="user === null">
+          <i v-on:click="account()" class="fa fa-user-circle user-icon"></i>
+          <span class="username">{{ user }}</span>
+        </div>
+        <div v-else class="d-flex">
+          <i
+            v-on:click="accountExisting()"
+            class="fa fa-user-circle user-icon"
+          ></i>
+          <span class="username">{{ user }}</span>
+        </div>
       </div>
     </div>
   </header>
@@ -37,11 +47,23 @@ export default {
     accountExisting() {
       this.$router.push({ name: "AccountExisting" });
     },
+    fetchData() {
+      this.user = JSON.parse(localStorage.getItem("user"));
+    },
   },
   computed: {
     count() {
       return this.$store.state.cartItemCount;
     },
+  },
+  created() {
+    this.$watch(
+      () => {
+        this.fetchData();
+      },
+
+      { immediate: true }
+    );
   },
 };
 </script>
@@ -77,6 +99,12 @@ export default {
   border-radius: 70%;
   width: 25px;
 }
+
+.username {
+  font-size: 10px;
+  color: green;
+}
+
 .cart {
   width: 120px;
   justify-content: space-evenly;
@@ -88,5 +116,10 @@ export default {
   color: lightgreen;
   cursor: pointer;
 }
-</style>
+
+.user-icon {
+  line-height: 50px;
+  color: lightgreen;
+  cursor: pointer;
 }
+</style>

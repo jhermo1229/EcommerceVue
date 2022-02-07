@@ -68,7 +68,16 @@
               </div>
             </div>
             <hr />
-            <div class="price d-flex justify-content-around align-items-center">
+            <div
+              class="price d-flex justify-content-around align-items-center"
+              v-if="user === null"
+            >
+              <h5 class="my-4">$ {{ details.price }} per set of 4</h5>
+              <button v-on:click="account()" class="btn btn-success">
+                Add To Cart
+              </button>
+            </div>
+            <div v-else>
               <h5 class="my-4">$ {{ details.price }} per set of 4</h5>
               <button v-on:click="addToCart" class="btn btn-success">
                 Add To Cart
@@ -125,7 +134,6 @@ export default {
     return {
       details: this.$route.params,
       name: "",
-      user: "",
     };
   },
   methods: {
