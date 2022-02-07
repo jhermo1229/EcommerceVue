@@ -77,6 +77,11 @@
           </div>
           <hr />
           <div class="d-flex justify-content-between">
+            <h6>Shipping Address:</h6>
+            <h6>{{ shipAddress }}</h6>
+          </div>
+          <hr />
+          <div class="d-flex justify-content-between">
             <h6>Total:</h6>
             <h6>${{ totalPrice + 100 }}</h6>
           </div>
@@ -108,7 +113,13 @@ export default {
   methods: {
     showAlert() {
       // Use sweetalert2
-      this.$swal("Order success!!!!");
+      this.$swal("Order success!!!!").then(function () {
+        location.reload();
+        localStorage.clear();
+      });
+    },
+    fetchData() {
+      this.shipAddress = JSON.parse(localStorage.getItem("shipAddress"));
     },
     addItem(items) {
       this.$store.dispatch("addToCart", items);
@@ -117,6 +128,7 @@ export default {
       this.$store.dispatch("removeToCart", items);
     },
   },
+
   computed: {
     cartItems() {
       return this.$store.state.cartItems;
@@ -128,6 +140,15 @@ export default {
       });
       return price;
     },
+  },
+  created() {
+    this.$watch(
+      () => {
+        this.fetchData();
+      },
+
+      { immediate: true }
+    );
   },
 };
 </script>
@@ -157,13 +178,6 @@ export default {
   margin: 0 5px;
   text-align: center;
 }
-/*
-.cartItems {
-  display: flex;
-  justify-content: space-between;
-  padding: 10px;
-  background: white;
-} */
 
 .line {
   height: 1px;

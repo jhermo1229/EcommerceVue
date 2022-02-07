@@ -19,21 +19,39 @@
               :key="items.id"
               class="d-flex justify-content-start"
             >
-              <div class="d-flex align-items-center p-2">
-                <h5 class="black">{{ items }}</h5>
+              <div
+                class="d-flex align-items-start flex-column"
+                style="height: 70px"
+              >
+                <div>
+                  <h5 class="commentAuthor">{{ items.author }}</h5>
+                </div>
+                <div>
+                  <h7 class="comment">{{ items.value }}</h7>
+                </div>
               </div>
             </div>
 
             <div
               v-for="items in cartItems"
               :key="items"
-              class="d-flex align-items-center p-2"
+              class="d-flex align-items-start flex-column"
+              style="height: 70px"
             >
               <div v-if="items.d === details.id">
-                <h5 class="black">{{ items.c }}</h5>
+                <div>
+                  <h5 class="commentAuthor">{{ user }}</h5>
+                </div>
+                <div>
+                  <h7 class="comment">{{ items.c }}</h7>
+                </div>
               </div>
             </div>
-            <div>
+            <div v-if="user === null">
+              <input type="text" placeholder="" v-model="name" />
+              <button v-on:click="account()">Add comment</button>
+            </div>
+            <div v-else>
               <input type="text" placeholder="" v-model="name" />
               <button v-on:click="addToComment">Add comment</button>
             </div>
@@ -41,9 +59,7 @@
 
           <div class="col-md-6 offset-md-2" style="cursor: pointer">
             <div>
-              <h2 class="my-4">
-                {{ details.name }}
-              </h2>
+              <h2 class="my-4">{{ details.name }}</h2>
               <hr />
               <div>
                 <h4>Perfect for:</h4>
@@ -83,15 +99,6 @@
                 </li>
               </ul>
             </div>
-            <!-- <div>
-              <button v-on:click="goToCart" class="btn btn-primary">
-                Go to Cart
-              </button>
-
-              <button v-on:click="removeToCart" class="btn btn-danger">
-                Remove Item
-              </button>
-            </div> -->
           </div>
         </div>
       </div>
@@ -118,11 +125,15 @@ export default {
     return {
       details: this.$route.params,
       name: "",
+      user: "",
     };
   },
   methods: {
     goToCart() {
       this.$router.push({ name: "Cart" });
+    },
+    account() {
+      this.$router.push({ name: "Account" });
     },
     addToCart() {
       this.$store.dispatch("addToCart", this.details);
@@ -144,6 +155,7 @@ export default {
   },
   mounted() {
     this.details = JSON.parse(localStorage.getItem("details"));
+    this.user = JSON.parse(localStorage.getItem("user"));
   },
 };
 </script>
@@ -162,6 +174,10 @@ export default {
 
 .price {
   background: lightblue;
+}
+
+.commentAuthor {
+  color: gray;
 }
 </style>
 }

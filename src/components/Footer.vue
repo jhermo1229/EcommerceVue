@@ -3,23 +3,23 @@
   <footer>
     <div class="footer d-flex justify-content-around">
       <div class="align-self-center">
-        <h4 class="color">ROTA WHEELS</h4>
+        <h7 class="color">ROTA WHEELS</h7>
       </div>
       <div class="color">
-        <h4>Address:</h4>
-        <h5>
+        <h6>Address:</h6>
+        <h7>
           Philippine Aluminum Wheels Incorporated Severina Diamond Industrial
-        </h5>
-        <h5>
+        </h7>
+        <h7>
           Complex Km. 16 South Superhighway, Paranaque, Metro Manila,
           Philippines
-        </h5>
+        </h7>
       </div>
       <div class="align-self-end color">
-        <h5>
+        <h7>
           PHILIPPINE ALUMINUM WHEELS INCORPORATED. COPYRIGHT 2022. ALL RIGHTS
           RESERVED
-        </h5>
+        </h7>
       </div>
     </div>
   </footer>

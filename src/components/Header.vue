@@ -11,6 +11,8 @@
         />
         <h4 v-on:click="home()" class="wheels">ROTA WHEELS</h4>
       </div>
+      <div class="wheels" v-on:click="account()">ACCOUNT</div>
+      <div class="wheels" v-on:click="accountExisting()">ACCOUNT EXISTING</div>
       <div class="d-flex cart">
         <i v-on:click="cart()" class="fa fa-shopping-cart cart-icon"></i>
         <span class="cart-count">{{ count }}</span>
@@ -28,6 +30,12 @@ export default {
     },
     home() {
       this.$router.push({ name: "Home" });
+    },
+    account() {
+      this.$router.push({ name: "Account" });
+    },
+    accountExisting() {
+      this.$router.push({ name: "AccountExisting" });
     },
   },
   computed: {

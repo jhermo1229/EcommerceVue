@@ -3,6 +3,8 @@ import VueRouter from "vue-router";
 import Home from "@/views/Home.vue";
 import Cart from "@/components/Cart.vue";
 import WheelsDetails from "@/components/WheelsDetails.vue";
+import Account from "@/components/Account.vue";
+import AccountExisting from "@/components/AccountExisting.vue";
 
 Vue.use(VueRouter);
 
@@ -21,6 +23,16 @@ const routes = [
     path: "/",
     name: "WheelsDetails",
     component: WheelsDetails,
+  },
+  {
+    path: "/",
+    name: "Account",
+    component: Account,
+  },
+  {
+    path: "/",
+    name: "AccountExisting",
+    component: AccountExisting,
   },
   // {
   //   path: "/about",
