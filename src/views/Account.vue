@@ -72,6 +72,7 @@ export default {
   name: "Account",
   components: { Header, Footer },
   methods: {
+    //Adding all the data inputted to the local storage
     getInputValue() {
       var username = document.getElementById("username").value;
       var firstName = document.getElementById("firstName").value;

@@ -117,6 +117,7 @@ export default {
         location.reload();
       });
     },
+    //If item is bought, it will be saved to localStorage
     addToHistory(items) {
       var hist = localStorage.getItem("buyHistory");
       if (!hist) {
@@ -127,21 +128,26 @@ export default {
       }
       localStorage.setItem("buyHistory", JSON.stringify(hist));
     },
+    //get the existing address in the localStorage
     fetchData() {
       this.shipAddress = JSON.parse(localStorage.getItem("shipAddress"));
     },
+    //calling the addToCart in store to be able to add items
     addItem(items) {
       this.$store.dispatch("addToCart", items);
     },
+    //calling the addToCart in store to be able to subtract items
     removeItem(items) {
       this.$store.dispatch("removeToCart", items);
     },
   },
 
   computed: {
+    //These are the existing items in the cart
     cartItems() {
       return this.$store.state.cartItems;
     },
+    //Computation of total price
     totalPrice() {
       let price = 0;
       this.$store.state.cartItems.map((el) => {
@@ -150,6 +156,7 @@ export default {
       return price;
     },
   },
+  //Added this to fetch data as soon as the page loads
   created() {
     this.$watch(
       () => {

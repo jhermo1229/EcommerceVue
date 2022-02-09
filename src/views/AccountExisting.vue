@@ -110,6 +110,7 @@ export default {
   name: "Account",
   components: { Header, Footer },
   methods: {
+    //Fetches all the values in the localStorage
     fetchData() {
       this.user = JSON.parse(localStorage.getItem("user"));
       this.firstName = JSON.parse(localStorage.getItem("firstName"));
@@ -117,7 +118,7 @@ export default {
       this.address = JSON.parse(localStorage.getItem("address"));
       this.shipAddress = JSON.parse(localStorage.getItem("shipAddress"));
     },
-
+    //This is for updating the shipping address in the local storage
     getInputValue() {
       var shipAddressNew = document.getElementById("shipAddressNew").value;
       var existing = localStorage.getItem("shipAddress");
@@ -132,6 +133,7 @@ export default {
       });
     },
   },
+  //loads the data as soon as the page loads
   created() {
     this.$watch(
       () => {

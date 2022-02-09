@@ -147,24 +147,26 @@ export default {
       // Use sweetalert2
       this.$swal("Please buy the item first!").then(function () {});
     },
+    //routing to cart
     goToCart() {
       this.$router.push({ name: "Cart" });
     },
+    //routing to account
     account() {
       this.$router.push({ name: "Account" });
     },
+    //adding to cart array in store
     addToCart() {
       this.$store.dispatch("addToCart", this.details);
     },
-    removeToCart() {
-      this.$store.dispatch("removeToCart", this.details);
-    },
+    //adding to comment array in store
     addToComment() {
       this.$store.dispatch("addToComment", {
         name: this.name,
         id: this.details.id,
       });
     },
+    //Validation to check if the product is already bought. If yes, then user is allowed to add comment
     checkIfBought(id) {
       const hist = localStorage.getItem("buyHistory");
       if (hist) {
@@ -176,11 +178,12 @@ export default {
       }
     },
   },
-
+  //adding to localstorage
   created() {
     if (this.$route.params.id != undefined)
       localStorage.setItem("details", JSON.stringify(this.$route.params));
   },
+  //getting data from localstorage
   mounted() {
     this.details = JSON.parse(localStorage.getItem("details"));
     this.user = JSON.parse(localStorage.getItem("user"));
@@ -208,4 +211,3 @@ export default {
   color: gray;
 }
 </style>
-}

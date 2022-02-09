@@ -31,11 +31,13 @@ export default {
   name: "Home",
   components: { Header, Footer },
   computed: {
+    //added wheels from store
     wheels() {
       return this.$store.state.wheels;
     },
   },
   methods: {
+    //transfer to wheels details page with parameter
     wheelsDetails(items) {
       this.$router.push({ name: "WheelsDetails", params: items });
     },
