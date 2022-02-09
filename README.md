@@ -1,5 +1,7 @@
 # ecommercev2
 
+Simple shoppingcart using VUE, Bootstrap, flexgrid and javascript
+
 ## Project setup
 ```
 npm install
