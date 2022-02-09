@@ -15,7 +15,7 @@
           <i v-on:click="cart()" class="fa fa-shopping-cart cart-icon"></i>
           <span class="cart-count">{{ count }}</span>
         </div>
-        <div class="cart" v-if="user === null">
+        <div class="d-flex" v-if="user === null">
           <i v-on:click="account()" class="fa fa-user-circle user-icon"></i>
           <span class="username">{{ user }}</span>
         </div>

@@ -155,5 +155,6 @@ export default {
   flex: 1;
   text-align: center;
   overflow-y: auto;
+  padding-top: 30px;
 }
 </style>

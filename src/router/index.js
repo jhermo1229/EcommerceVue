@@ -1,10 +1,10 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "@/views/Home.vue";
-import Cart from "@/components/Cart.vue";
-import WheelsDetails from "@/components/WheelsDetails.vue";
-import Account from "@/components/Account.vue";
-import AccountExisting from "@/components/AccountExisting.vue";
+import Cart from "@/views/Cart.vue";
+import WheelsDetails from "@/views/WheelsDetails.vue";
+import Account from "@/views/Account.vue";
+import AccountExisting from "@/views/AccountExisting.vue";
 
 Vue.use(VueRouter);
 
@@ -34,15 +34,6 @@ const routes = [
     name: "AccountExisting",
     component: AccountExisting,
   },
-  // {
-  //   path: "/about",
-  //   name: "About",
-  //   // route level code-splitting
-  //   // this generates a separate chunk (about.[hash].js) for this route
-  //   // which is lazy-loaded when the route is visited.
-  //   component: () =>
-  //     import(/* webpackChunkName: "about" */ "../views/About.vue"),
-  // },
 ];
 
 const router = new VueRouter({
