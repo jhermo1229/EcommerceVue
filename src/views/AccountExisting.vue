@@ -93,7 +93,7 @@
               type="button"
               v-on:click="getInputValue(), showAlert()"
             >
-              Create
+              Update
             </button>
           </div>
         </div>
