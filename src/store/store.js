@@ -106,7 +106,7 @@ export default new Vuex.Store({
       {
         id: 5,
         name: "ROTA PWR 16 17 18 19 inch Available Lightweight Alloy",
-        price: 100,
+        price: 1078,
         url: pwr,
         desc: "This bold-looking wheel has an extremely concave appearance. The massive 18x10 size is big and extremely wide, so it's great for cars with aftermarket fender flares. 5x100 bolt pattern bolts to all 2002-2014 WRX, plus 2004 WRX STi, and Forester XT, too.",
         models: [pwr1, pwr2, pwr3],
@@ -124,7 +124,7 @@ export default new Vuex.Store({
       {
         id: 6,
         name: "ROTA KBF 16 17 18 19 inch Available Lightweight Alloy",
-        price: 100,
+        price: 1009,
         url: kbf,
         desc: "This wheel looks a bit similar to the OEM Subaru BBS wheel found on the 2015-2017 WRX STi. It's the same 18x8.5 size as that wheel, but the +44 offset puts it about 11mm closer to the fender than the OEM wheel. That extra offset has been put to use in making the center cup area slightly concave for some visual drama.",
         models: [kbf1, kbf2, kbf3],
