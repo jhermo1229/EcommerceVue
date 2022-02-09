@@ -90,7 +90,7 @@
               type="button"
               style="width: 100%"
               class="btn btn-primary"
-              @click="showAlert"
+              @click="addToHistory(cartItems), showAlert()"
             >
               Checkout
             </button>
@@ -115,8 +115,17 @@ export default {
       // Use sweetalert2
       this.$swal("Order success!!!!").then(function () {
         location.reload();
-        localStorage.clear();
       });
+    },
+    addToHistory(items) {
+      var hist = localStorage.getItem("buyHistory");
+      if (!hist) {
+        hist = [];
+      }
+      for (let i = 0; i < items.length; i++) {
+        hist.push(items[i].id);
+      }
+      localStorage.setItem("buyHistory", JSON.stringify(hist));
     },
     fetchData() {
       this.shipAddress = JSON.parse(localStorage.getItem("shipAddress"));

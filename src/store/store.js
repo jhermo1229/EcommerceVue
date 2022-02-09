@@ -46,11 +46,11 @@ export default new Vuex.Store({
         models: [gforce1, gforce2, gforce3],
         comment: [
           {
-            author: "Diana Meneses",
+            author: "DianaMene",
             value: "Very light. Looks bad to use with snow",
           },
           {
-            author: "Sinead O' Connor",
+            author: "SineadOConnor",
             value: "I like how it looks",
           },
         ],
@@ -63,9 +63,9 @@ export default new Vuex.Store({
         desc: "The Rota GR6 features a clean and classic six-spoke design with a concave profile and curved spokes for better brake calliper clearance. The GR6 is packing tons of character and street cred into any vehicle it is fitted to. The GR6 comes in 18 wheel diameters with a popular PCD of 5x114.",
         models: [gr61, gr62, gr63],
         comment: [
-          { author: "Lauren Christy", value: "So far so good" },
+          { author: "LaurenChristy", value: "So far so good" },
           {
-            author: "Maddie Reyes",
+            author: "MaddieReyes",
             value: "Good for the price",
           },
         ],
@@ -79,11 +79,11 @@ export default new Vuex.Store({
         models: [grid1, grid2, grid3],
         comment: [
           {
-            author: "Phil Collins",
+            author: "PhilCollins",
             value: "Using and loving it for a year now",
           },
           {
-            author: "John Secada",
+            author: "JohnSecada24",
             value: "I would buy another one for my next car",
           },
         ],
@@ -96,9 +96,9 @@ export default new Vuex.Store({
         desc: "All Rota wheels are cast from high quality alloy in popular styles at an affordable price, designed for street performance driving and tracking racing use. Rota world-class alloy wheels are designed and made from cutting-edge technology, which works all the way from wheel designs, casting and finishing with final inspection to ensure the highest standard within Rota's quality guideline.",
         models: [kensei1, kensei2, kensei3],
         comment: [
-          { author: "Lisa Loeb", value: "Dont sleep on this" },
+          { author: "LisaLoeb99", value: "Dont sleep on this" },
           {
-            author: "Hugh Grant",
+            author: "HughGrant33",
             value: "Good looking",
           },
         ],
@@ -112,11 +112,11 @@ export default new Vuex.Store({
         models: [pwr1, pwr2, pwr3],
         comment: [
           {
-            author: "Lebron James",
+            author: "LebronJames23",
             value: "Will I buy another one? Definitely",
           },
           {
-            author: "Nobita Noro",
+            author: "NobitaNoro",
             value: "Bought one and not having a problem so far",
           },
         ],
@@ -129,9 +129,9 @@ export default new Vuex.Store({
         desc: "This wheel looks a bit similar to the OEM Subaru BBS wheel found on the 2015-2017 WRX STi. It's the same 18x8.5 size as that wheel, but the +44 offset puts it about 11mm closer to the fender than the OEM wheel. That extra offset has been put to use in making the center cup area slightly concave for some visual drama.",
         models: [kbf1, kbf2, kbf3],
         comment: [
-          { author: "Jordan Mike", value: "Best looking wheels here" },
+          { author: "JordanMike", value: "Best looking wheels here" },
           {
-            author: "Grant Hill",
+            author: "GrantHill",
             value: "I would recomment this to my friends",
           },
         ],

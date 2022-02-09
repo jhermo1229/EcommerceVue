@@ -52,12 +52,18 @@
               <button v-on:click="account()">Add comment</button>
             </div>
             <div v-else>
-              <input type="text" placeholder="" v-model="name" />
-              <button v-on:click="addToComment">Add comment</button>
+              <div v-if="checkIfBought(this.details.id)">
+                <input type="text" placeholder="" v-model="name" />
+                <button v-on:click="addToComment">Add comment</button>
+              </div>
+              <div v-else @click="showAlert()">
+                <input type="text" placeholder="" v-model="name" />
+                <button>Add comment</button>
+              </div>
             </div>
           </div>
 
-          <div class="col-md-6 offset-md-2" style="cursor: pointer">
+          <div class="col-md-6 offset-md-2">
             <div>
               <h2 class="my-4">{{ details.name }}</h2>
               <hr />
@@ -137,6 +143,10 @@ export default {
     };
   },
   methods: {
+    showAlert() {
+      // Use sweetalert2
+      this.$swal("Please buy the item first!").then(function () {});
+    },
     goToCart() {
       this.$router.push({ name: "Cart" });
     },
@@ -154,6 +164,16 @@ export default {
         name: this.name,
         id: this.details.id,
       });
+    },
+    checkIfBought(id) {
+      const hist = localStorage.getItem("buyHistory");
+      if (hist) {
+        if (hist.indexOf(id) !== -1) {
+          return true;
+        } else {
+          return false;
+        }
+      }
     },
   },
 
